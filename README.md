@@ -29,9 +29,9 @@ Web app built using Flask.
     python3 app.py
 
 ## Website looks like:
-    ![image](https://github.com/user-attachments/assets/c41ba7d9-81db-4116-a2bb-895b5f62d58f)
+    ![Demo](assets/demo.png)
 
-## ✨ Features
+## Features
 - Text classification into 20 categories
 - Clean web interface with Flask
 - Auto vectorization + model prediction
