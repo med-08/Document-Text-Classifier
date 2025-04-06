@@ -1,4 +1,4 @@
-# 🧠 Document Classifier Web App
+# Document Classifier Web App
 
 Classifies any given text into one of 20 topics using Machine Learning.
 (**Linear Support Vector Classification (LinearSVC)** + **TF-IDF** vectorization).  
@@ -6,18 +6,18 @@ Web app built using Flask.
 
 ---
 
-## 📂 Dataset Used
+## Dataset Used
 - **20 Newsgroups Dataset** (sklearn.datasets)
 - Preprocessed using TF-IDF vectorizer (bigrams, min_df=5, max_df=0.9)
 
 ---
 
-## 🔗 Try It Now (Colab Notebook)
+## (Colab Notebook)
 [Open in Google Colab](https://colab.research.google.com/drive/1tdcbA3ml0W9nK6d1BoFz43JQPAOxat3k#scrollTo=gwVN1QM6pa9P)
 
 ---
 
-## 💻 How to Run Locally
+## How to Run Locally
 
 ### 1. Clone the repository 
     git clone https://github.com/med-08/Document-Text-Classifier.git
