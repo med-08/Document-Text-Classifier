@@ -28,7 +28,7 @@ Web app built using Flask.
 ### 3. Run the app
     python3 app.py
 
-## Website looks like:
+## Demo
 <img src="assets/demo.png" alt="App Demo" width="600"/>
 
 ## Features
