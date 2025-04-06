@@ -29,7 +29,7 @@ Web app built using Flask.
     python3 app.py
 
 ## Website looks like:
-<img src="assets/screenshot.png" alt="App Screenshot" width="600"/>
+<img src="assets/demo.png" alt="App Demo" width="600"/>
 
 ## Features
 - Text classification into 20 categories
