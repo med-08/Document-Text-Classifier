@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document/Text Classifier</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to right, #e0f7fa, #e1bee7);
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .container {
+            max-width: 720px;
+            margin-top: 60px;
+            padding: 40px;
+            background-color: #ffffffcc;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            font-weight: bold;
+            background: -webkit-linear-gradient(#6a11cb, #2575fc);
+            background: linear-gradient(#6a11cb, #2575fc);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+        .form-label {
+            font-weight: 500;
+            color: #4a148c;
+        }
+        textarea, input[type="file"] {
+            border: 2px solid #bbdefb;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+        .btn-space {
+            margin-right: 12px;
+        }
+        button[type="submit"] {
+            background-color: #e3a8ee;
+            border-color: #c47dd1;
+            color: white;
+        }
+        button[type="reset"] {
+            background-color: #77dfec;
+            border-color: #54cada;
+            color: white;
+        }
+        .alert-info {
+            background-color: #e3f2fd;
+            color: #0d47a1;
+            border-left: 5px solid #2196f3;
+        }
+        .list-group-item {
+            border: none;
+            border-radius: 6px;
+        }
+    </style>    
+</head>
+<body>
+
+<div class="container">
+    <h2 class="mb-4 text-center">📄 Automated Document/Text Classifier</h2>
+    
+    <form method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="file" class="form-label">Upload a .txt or .pdf file</label>
+            <input type="file" name="file" accept=".txt,.pdf" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label for="text" class="form-label">Or paste your text below</label>
+            <textarea name="text" class="form-control" rows="8" placeholder="Paste your text here...">{{ user_input }}</textarea>
+        </div>
+
+        <button type="submit" class="btn btn-success btn-space">Classify</button>
+        <button type="reset" class="btn btn-danger">Reset</button>
+    </form>
+
+    {% if predictions %}
+    <div class="alert alert-info mt-4">
+        <h5 class="mb-3">🧠 Top Predictions:</h5>
+        <ul class="list-group">
+            {% for category, prob in predictions %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    {{ category }}
+                    <span class="badge bg-primary rounded-pill">{{ prob }}%</span>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</div>
+
+<script>
+    document.querySelector('form').addEventListener('reset', function () {
+        document.querySelector('.alert')?.remove();
+    });
+</script>
+
+</body>
+</html>
